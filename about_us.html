@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Explore Tunisia</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            padding-top: 76px;
+            background: #fefaf5;
+        }
+        /* Custom Navbar (same as your homepage) */
+        .navbar-custom {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            padding: 0.8rem 0;
+            transition: all 0.3s;
+        }
+        .navbar-brand {
+            font-size: 1rem;  /* smaller brand text as you requested */
+            letter-spacing: 0.5px;
+        }
+        .nav-link, .dropdown-item {
+            font-weight: 500;
+            transition: 0.2s;
+        }
+        .nav-link:hover, .dropdown-item:hover {
+            color: #2d6a4f !important;
+            transform: translateY(-1px);
+        }
+        .btn-about {
+            background: #2d6a4f;
+            color: white;
+            border-radius: 30px;
+            padding: 0.35rem 1rem;
+            transition: all 0.2s;
+        }
+        .btn-about:hover {
+            background: #1b4d3e;
+            transform: translateY(-1px);
+            color: white;
+        }
+        /* About Hero Section */
+        .about-hero {
+            background: linear-gradient(135deg, #2d6a4f 0%, #1b4d3e 100%);
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+            border-radius: 0 0 30px 30px;
+        }
+        /* Team Cards */
+        .team-card {
+            background: white;
+            border-radius: 24px;
+            padding: 1.8rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border: 1px solid rgba(0,0,0,0.05);
+            height: 100%;
+        }
+        .team-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 35px rgba(45,106,79,0.15);
+            border-color: #2d6a4f20;
+        }
+        .team-icon {
+            width: 80px;
+            height: 80px;
+            background: #e9f5e9;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 2.2rem;
+            color: #2d6a4f;
+        }
+        .role-tag {
+            background: #d4a37320;
+            color: #d4a373;
+            padding: 0.25rem 1rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+        .site-description-card {
+            background: white;
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border-left: 6px solid #d4a373;
+        }
+        .footer {
+            background: #1a2c1e;
+            color: #cddfc7;
+            padding: 2rem 0;
+            margin-top: 3rem;
+            text-align: center;
+        }
+        .footer a {
+            color: #d4a373;
+            text-decoration: none;
+        }
+        @media (max-width: 768px) {
+            .navbar-brand {
+                font-size: 0.85rem;
+            }
+            .about-hero {
+                padding: 2rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ==================== NAVBAR ==================== -->
+<nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html">
+            <i class="fas fa-leaf me-1" style="color:#2d6a4f;"></i> Explore Tunisia
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-center gap-1">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html"><i class="fas fa-home me-1"></i>Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                        <i class="fas fa-map-marker-alt me-1"></i>Places
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="zaghouan.html">Zaghouan</a></li>
+                        <li><a class="dropdown-item" href="nabeul.html">Nabeul</a></li>
+                        <li><a class="dropdown-item" href="bizerte.html">Bizerte</a></li>
+                        <li><a class="dropdown-item" href="kebili.html">Kebili</a></li>
+                        <li><a class="dropdown-item" href="mahdia.html">Mahdia</a></li>
+                        <li><a class="dropdown-item" href="djerba.html">Djerba</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item ms-md-2">
+                    <a class="btn btn-about btn-sm fw-bold" href="about_us.html"><i class="fas fa-info-circle me-1"></i>About Us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- ==================== ABOUT HERO ==================== -->
+<section class="about-hero text-center">
+    <div class="container">
+        <h1 class="display-5 fw-bold" style="font-family: 'Playfair Display';">About Explore Tunisia</h1>
+        <p class="lead mt-2">Your gateway to Tunisia’s hidden wonders & timeless beauty</p>
+    </div>
+</section>
+
+<!-- ==================== MAIN CONTENT ==================== -->
+<div class="container my-5">
+    <!-- Site Description -->
+    <div class="row justify-content-center mb-5">
+        <div class="col-lg-10">
+            <div class="site-description-card">
+                <div class="d-flex align-items-center gap-2 mb-3">
+                    <i class="fas fa-map-marked-alt fa-2x" style="color:#2d6a4f;"></i>
+                    <h3 class="mb-0 fw-bold" style="color:#2d6a4f;">Our Mission</h3>
+                </div>
+                <p class="fs-5" style="line-height: 1.6;"> 
+                    <strong>Explore Tunisia</strong> is born from a deep love for our country's rich tapestry — 
+                    from the <i class="fas fa-water" style="color:#2d6a4f;"></i> Mediterranean shores to the <i class="fas fa-mountain-sun" style="color:#d4a373;"></i> Sahara dunes, from Roman ruins to vibrant souks. 
+                    We handpick authentic experiences, hidden gems, and cultural treasures to help you travel like a local. 
+                    Whether you seek adventure, history, or relaxation, we're here to guide you.
+                </p>
+                <div class="row mt-4 text-center">
+                    <div class="col-md-4">
+                        <i class="fas fa-landmark fs-3" style="color:#2d6a4f;"></i>
+                        <p class="mt-1 mb-0"><strong>History</strong><br><small>Roman, Punic, Ottoman</small></p>
+                    </div>
+                    <div class="col-md-4">
+                        <i class="fas fa-utensils fs-3" style="color:#d4a373;"></i>
+                        <p class="mt-1 mb-0"><strong>Cuisine</strong><br><small>Couscous, Brik, Harissa</small></p>
+                    </div>
+                    <div class="col-md-4">
+                        <i class="fas fa-hiking fs-3" style="color:#2d6a4f;"></i>
+                        <p class="mt-1 mb-0"><strong>Adventure</strong><br><small>Oases, Canyons, Beaches</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Team Section : Meriem Bouzid & Meria Hmema -->
+    <div class="text-center mb-4">
+        <h2 class="fw-bold" style="color:#2d6a4f;"> <i class="fas fa-users me-2"></i> Meet the creators</h2>
+        <p class="text-muted">Two passionate explorers sharing Tunisia's soul with the world</p>
+    </div>
+    <div class="row justify-content-center g-4">
+        <!-- Meriem Bouzid -->
+        <div class="col-md-5 col-lg-4">
+            <div class="team-card">
+                <div class="team-icon">
+                    <i class="fas fa-female"></i>
+                </div> 
+                <h4 class="fw-bold mb-1">Meriem Bouzid</h4>
+                <span class="role-tag">Co-founder & Content Curator</span>
+                <p class="mt-3">Meriem researched and wrote the detailed guides for Bizerte, Nabeul, and Zaghouan. She focused on the pottery souks of Nabeul, the Roman water temples of Zaghouan, and the old port of Bizerte.Every recommendation comes from her own footsteps – from authentic 'Dars' to forgotten trails."</p>
+                <div class="mt-2">
+                    <div class="mt-3">
+                        <a href="mailto:meriem.bouzid@polytechnicien.tn" style="color:#2d6a4f; text-decoration:none;"><i class="fas fa-envelope"></i>meriem.bouzid@polytechnicien.tn
+    </a></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Meria Hmema -->
+        <div class="col-md-5 col-lg-4">
+            <div class="team-card">
+                <div class="team-icon">
+                    <i class="fas fa-female"></i>
+                </div>
+                <h4 class="fw-bold mb-1">Meria Hmema</h4>
+                <span class="role-tag">Co-founder & Content Curator</span>
+                <p class="mt-3">Meria researched and wrote the detailed guides for Djerba, Kebili, and Mahdia. She covered the Chott el Djerid salt flats, Houmt Souk in Djerba, the Ottoman fortresses of Mahdia, and the desert oases of Kebili.</p>
+                <div class="mt-3">
+                    <a href="mailto:meria.hmama@polytechnicien.tn" style="color:#2d6a4f; text-decoration:none;"><i class="fas fa-envelope"></i> meria.hmama@polytechnicien.tn</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- extra touch: quote -->
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-8 text-center bg-white rounded-4 p-4 shadow-sm">
+            <i class="fas fa-quote-left fa-2x" style="color:#d4a373;"></i>
+            <p class="fs-5 fst-italic mt-2">"Tunisia isn't just a destination — it's a feeling. We want every visitor to leave with a piece of its magic."</p>
+            <small>— Meriem & Meria</small>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="footer">
+    <div class="container">
+        <p><i class="fas fa-leaf me-1" style="color:#d4a373;"></i> Explore Tunisia — Discover the heart of North Africa</p>
+        <p class="small mb-0">© 2025 · Created with <i class="fas fa-heart" style="color:#d4a373;"></i> by Meriem Bouzid & Meria Hmema</p>
+    </div>
+</footer>
+
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

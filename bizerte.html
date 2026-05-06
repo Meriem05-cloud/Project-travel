@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Bizerte | Ichkeul Lake & Mountain Majesty — Explore Tunisia</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fefcf5;
+            color: #1e2a2e;
+            scroll-behavior: smooth;
+        }
+
+        /* Navbar */
+        .navbar-custom {
+            background: rgba(255, 252, 240, 0.96);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02), 0 1px 0 rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            padding: 0.8rem 0;
+        }
+
+        .navbar-scrolled {
+            background: rgba(255, 250, 240, 0.98);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+            padding: 0.5rem 0;
+        }
+
+        .navbar-brand {
+            font-size: 1.6rem;
+            letter-spacing: -0.3px;
+            background: linear-gradient(135deg, #2d6a4f, #b78c3a);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            font-weight: 700;
+        }
+
+        .navbar-nav .nav-link {
+            font-weight: 500;
+            color: #2c3e2f;
+            margin: 0 0.2rem;
+            transition: 0.2s;
+            border-radius: 30px;
+            padding: 0.5rem 1rem;
+        }
+
+        .navbar-nav .nav-link:hover {
+            background: #e9ece0;
+            color: #1b4d2e;
+        }
+
+        .navbar-nav .nav-link.active {
+            background: #2d6a4f;
+            color: white !important;
+        }
+
+        .dropdown-menu {
+            background: rgba(255, 252, 240, 0.98);
+            backdrop-filter: blur(8px);
+            border-radius: 1rem;
+            border: none;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .dropdown-item {
+            border-radius: 0.5rem;
+            padding: 0.5rem 1.2rem;
+            color: #2c3e2f;
+        }
+
+        .dropdown-item:hover {
+            background: #2d6a4f;
+            color: white;
+        }
+
+        .btn-about {
+            background: #2d6a4f;
+            color: white;
+            border: none;
+            border-radius: 40px;
+            padding: 0.4rem 1.2rem;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .btn-about:hover {
+            background: #1b4e3a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 14px rgba(45, 106, 79, 0.25);
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 75vh;
+            background: linear-gradient(107deg, #1f3b2c 0%, #2b5a42 100%);
+            background-image: url('https://img.freepik.com/vecteurs-libre/banniere-coloree-fond-vert_677411-4085.jpg?semt=ais_hybrid&w=740&q=80');
+            background-size: cover;
+            background-position: center 35%;
+            background-blend-mode: overlay;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-top: 0;
+            border-radius: 0 0 3rem 3rem;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 20% 30%, rgba(0,0,0,0.3), rgba(0,20,5,0.65));
+            z-index: 1;
+        }
+
+        .hero h1 {
+            position: relative;
+            z-index: 2;
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            color: white;
+            text-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            letter-spacing: -0.5px;
+            backdrop-filter: blur(3px);
+            background: rgba(0,0,0,0.25);
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            border-radius: 60px;
+            animation: fadeUp 1s ease;
+        }
+
+        @keyframes fadeUp {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Card Styling - Smaller width, centered */
+        .cards-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .custom-card {
+            background: #ffffff;
+            border: none;
+            border-radius: 2rem;
+            transition: all 0.25s ease;
+            box-shadow: 0 12px 28px -12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .custom-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 25px 35px -16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Full width images inside cards */
+        .place-img {
+            width: 100%;
+            border-radius: 1.2rem;
+            object-fit: cover;
+            height: 350px;
+        }
+
+        .img-hover-zoom {
+            overflow: hidden;
+            border-radius: 1.2rem;
+            width: 100%;
+        }
+
+        .img-hover-zoom img {
+            transition: transform 0.4s ease;
+            width: 100%;
+            display: block;
+        }
+
+        .img-hover-zoom:hover img {
+            transform: scale(1.03);
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 0.8rem;
+        }
+
+        .pro-tip {
+            background: #eef4e6;
+            border-left: 6px solid #b78c3a;
+            border-radius: 1rem;
+            padding: 1rem 1.5rem;
+            margin-top: 0.8rem;
+        }
+
+        .info-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin: 1rem 0;
+        }
+
+        .info-chip {
+            background: #f2efe4;
+            border-radius: 40px;
+            padding: 0.3rem 1rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .table-custom {
+            background: #fef9ef;
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+
+        .table-custom th {
+            background: #2d6a4f;
+            color: white;
+            border: none;
+        }
+
+        footer {
+            background: #1b2f26;
+            color: #cddccd;
+            border-radius: 2rem 2rem 0 0;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+                padding: 0.8rem 1.5rem;
+            }
+            .hero {
+                min-height: 55vh;
+            }
+            .place-img {
+                height: 200px;
+            }
+            .cards-container {
+                padding: 0 15px;
+            }
+            .gallery-img {
+                height: 140px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAVBAR with Bizerte active in dropdown -->
+<nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html"><i class="fas fa-leaf me-1" style="color:#2d6a4f;"></i> Explore Tunisia</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-center gap-1">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html"><i class="fas fa-home me-1"></i>Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">
+                        <i class="fas fa-map-marker-alt me-1"></i>Places
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="zaghouan.html">Zaghouan</a></li>
+                        <li><a class="dropdown-item" href="nabeul.html">Nabeul</a></li>
+                        <li><a class="dropdown-item" href="bizerte.html">Bizerte</a></li>
+                        <li><a class="dropdown-item" href="kebili.html">Kebili</a></li>
+                        <li><a class="dropdown-item" href="mahdia.html">Mahdia</a></li>
+                        <li><a class="dropdown-item" href="djerba.html">Djerba</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item ms-md-2">
+                    <a class="btn btn-about btn-sm fw-bold" href="about_us.html"><i class="fas fa-info-circle me-1"></i>About Us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero mt-0 pt-5">
+    <h1>Bizerte</h1>
+    <br>
+    <h5>located in northern Tunisia</h5>
+</section>
+
+<!-- MAIN CONTENT - Cards with smaller width, centered -->
+<main class="container my-5">
+    <div class="cards-container">
+        <div class="d-flex flex-column gap-4">
+            
+            <!-- Card 1: Ichkeul National Park (UNESCO Water & Bird Sanctuary) -->
+            <div class="w-100">
+                <div class="card custom-card p-3 p-xl-4">
+                    <div class="img-hover-zoom mb-3">
+                        <img src="images/parkichkeul.jpg" alt="Ichkeul National Park Lake and birds" class="place-img" onerror="this.src='https://placehold.co/800x500/e9e3d0/2d6a4f?text=Ichkeul+National+Park'">
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h3 class="fw-bold" style="color:#2c553d;"><i class="fas fa-water me-2"></i>Ichkeul National Park</h3>
+                    </div>
+                    <div class="mb-2">
+                        <a href="https://maps.google.com/?q=Ichkeul+National+Park+Bizerte+Tunisia" target="_blank" class="btn btn-outline-success btn-sm rounded-pill">
+                            <i class="fas fa-map-marker-alt"></i> View on Google Maps
+                        </a>
+                        <a href="https://whc.unesco.org/en/list/8/" target="_blank" class="btn btn-outline-success btn-sm rounded-pill ms-2">
+                            <i class="fas fa-flag-checkered"></i> UNESCO Heritage
+                        </a>
+                    </div>
+                    <p>A UNESCO World Heritage Site and a Ramsar wetland of international importance. Ichkeul is the last major freshwater lake in North Africa, hosting over 200,000 migratory birds each winter — including flamingos, greylag geese, and coots. Surrounded by mountains, it's a paradise for birdwatchers and nature lovers.</p>
+                    <div class="info-grid">
+                        <span class="info-chip"><i class="fas fa-binoculars"></i> Birdwatching</span>
+                        <span class="info-chip"><i class="fas fa-camera"></i> Wildlife photography</span>
+                        <span class="info-chip"><i class="fas fa-hiking"></i> Eco trails</span>
+                    </div>
+                    <div class="d-flex flex-wrap gap-2 my-2">
+                        <span class="info-chip"><i class="far fa-clock"></i> Best: Dec–Feb (birds)</span>
+                        <span class="info-chip"><i class="fas fa-ticket-alt"></i> Entry ~5 DT</span>
+                        <span class="info-chip"><i class="fas fa-cloud-sun"></i> Mild winters</span>
+                    </div>
+                    <ul class="mt-2 ps-3" style="list-style-type: none; padding-left: 0;">
+                        <li class="mb-1"><i class="fas fa-check-circle text-success me-2"></i> <strong>Activities:</strong> Birdwatching, hiking around Jebel Ichkeul, photography, picnics</li>
+                        <li class="mb-1"><i class="fas fa-lightbulb text-warning me-2"></i> <strong>Tip:</strong> Bring binoculars and a telephoto lens. Visit early morning for best wildlife sightings.</li>
+                    </ul>
+                    <div class="pro-tip">
+                        <i class="fas fa-map-marked-alt me-2" style="color:#b78c3a;"></i>
+                        <strong>Advice:</strong> Hire a local guide near the park entrance for a richer experience — they know the best hides for flamingos.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: Jebel Ichkeul (Mountain & Panoramic Views) -->
+            <div class="w-100">
+                <div class="card custom-card p-3 p-xl-4">
+                    <div class="img-hover-zoom mb-3">
+                        <img src="images/djebelichkeul.jpg" alt="Jebel Ichkeul mountain overview" class="place-img" onerror="this.src='https://placehold.co/800x500/ccd5ae/2d6a4f?text=Jebel+Ichkeul+Mountain'">
+                    </div>
+                    <h3 class="fw-bold" style="color:#2c553d;"><i class="fas fa-mountain me-2"></i>Jebel Ichkeul</h3>
+                    <p class="mt-2">The iconic limestone mountain rising from the edge of Ichkeul Lake. Its slopes are covered with Mediterranean scrub, wild olive trees, and offer breathtaking panoramic views over the lake, the surrounding wetlands, and all the way to the Mediterranean coast. A moderate hike to the summit rewards you with one of Tunisia's most stunning vistas.</p>
+                    <div class="mb-2">
+                        <a href="https://www.alltrails.com/explore/tunisia/bizerte" target="_blank" class="btn btn-outline-success btn-sm rounded-pill">
+                            <i class="fas fa-route"></i> View Trails (AllTrails)
+                        </a>
+                    </div>
+                    <div class="d-flex flex-wrap gap-2 my-2">
+                        <span class="info-chip"><i class="far fa-clock"></i> 3–5 hours round trip</span>
+                        <span class="info-chip"><i class="fas fa-chart-line"></i> Easy to Moderate</span>
+                        <span class="info-chip"><i class="fas fa-leaf"></i> Spring wildflowers</span>
+                    </div>
+                    <div class="pro-tip">
+                        <i class="fas fa-map-marked-alt me-2" style="color:#b78c3a;"></i>
+                        <strong>Advice:</strong> Start early morning (before 9am) to avoid heat. Carry at least 2L water, sunscreen, and a hat. The trail is not marked clearly, so a GPS or knowledgeable guide is recommended.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Dar El Kasba (Traditional Guest House in Bizerte Medina) -->
+            <div class="w-100">
+                <div class="card custom-card p-3 p-xl-4">
+                    <div class="img-hover-zoom mb-3">
+                        <img src="images/darelkasba.jpg" alt="Dar El Kasba traditional courtyard" class="place-img" onerror="this.src='https://placehold.co/800x500/d4c9a3/2d6a4f?text=Dar+El+Kasba'">
+                    </div>
+                    <h3 class="fw-bold" style="color:#2c553d;"><i class="fas fa-home me-2"></i>Dar El Kasba</h3>
+                    <p>A beautifully restored traditional guest house nestled in the heart of Bizerte's historic medina. Featuring Andalusian-style architecture, a serene central courtyard, rooftop terrace with panoramic sea and city views, and warm family hospitality. Dar El Kasba offers authentic Tunisian rooms, homemade cuisine, and a peaceful escape from the bustle.</p>
+                    <div class="mt-2 mb-2">
+                        <a href="https://maps.google.com/?q=Dar+El+Kasba+Bizerte+Medina" target="_blank" class="btn btn-outline-success btn-sm rounded-pill">
+                            <i class="fas fa-map-marker-alt"></i> View on Google Maps
+                        </a>
+                        <a href="#" class="btn btn-success btn-sm rounded-pill">
+                            <i class="fas fa-phone-alt"></i> +216 72 432 100
+                        </a>
+                    </div>
+                    <div class="row g-3 mt-2">
+                        <div class="col-12 col-md-4">
+                            <img src="images/darelkasba1.jpg" class="gallery-img" alt="Courtyard" onerror="this.src='https://placehold.co/400x300/e9e3d0/2d6a4f?text=Courtyard+View'">
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <img src="images/darelkasba2.jpg" class="gallery-img" alt="Traditional room" onerror="this.src='https://placehold.co/400x300/e9e3d0/2d6a4f?text=Room'">
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <img src="images/darelkasba3.jpg" class="gallery-img" alt="Rooftop terrace" onerror="this.src='https://placehold.co/400x300/e9e3d0/2d6a4f?text=Terrace+View'">
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <div class="d-flex justify-content-between flex-wrap">
+                            <span class="info-chip"><i class="fas fa-bed"></i> Traditional Rooms</span>
+                            <span class="info-chip"><i class="fas fa-utensils"></i> Homemade Tunisian food</span>
+                            <span class="info-chip"><i class="fas fa-wifi"></i> Free WiFi</span>
+                            <span class="info-chip"><i class="fas fa-mug-hot"></i> Breakfast included</span>
+                        </div>
+                        <h5 class="mt-3 fw-semibold">🏡 Stay rates (per night, TND – Tunisian Dinar):</h5>
+                        <div class="table-responsive">
+                            <table class="table table-custom table-sm mt-2">
+                                <thead>
+                                    <tr><th>Room type</th><th>Price per Night (DT)</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td><i class="fas fa-bed"></i> Standard Double</td><td>130 – 180 DT</td></tr>
+                                    <tr><td><i class="fas fa-door-open"></i> Suite with Terrace</td><td>200 – 260 DT</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="alert alert-light border-0 bg-success bg-opacity-10 rounded-4 mt-2">
+                            <i class="fas fa-star-of-life"></i> <strong>Local tip:</strong> Ask for the traditional couscous or fish tagine — the owner’s wife cooks family recipes. Enjoy sunset mint tea on the terrace overlooking Bizerte's port.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- QUOTE SECTION -->
+    <div class="row mt-5">
+        <div class="col-12 text-center">
+            <div class="p-4 p-md-5 rounded-4" style="background: linear-gradient(120deg, #e9f0e2, #fff6e6); border: 1px solid #e6dbb5;">
+                <i class="fas fa-quote-left fa-2x opacity-50 mb-2" style="color:#b78c3a;"></i>
+                <p class="fs-4 fst-italic font-serif" style="font-family: 'Playfair Display';">“Bizerte is where the lake whispers to the mountains, and flamingos paint the sky — a silent, wild symphony of North Africa.”</p>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="container-fluid py-4 mt-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <span class="fw-bold fs-5"><i class="fas fa-leaf me-2"></i>Explore Tunisia</span>
+                <p class="small mt-2 opacity-75">Discover authentic landscapes — Bizerte, the northern jewel of Tunisia.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <p class="small mt-2 mb-0">© 2025 — inspired by Tunisian nature & Ichkeul's wild beauty</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Scroll effect script -->
+<script>
+    window.addEventListener("scroll", function() {
+        const navbar = document.querySelector(".navbar-custom");
+        if (navbar) {
+            if (window.scrollY > 50) {
+                navbar.classList.add("navbar-scrolled");
+            } else {
+                navbar.classList.remove("navbar-scrolled");
+            }
+        }
+    });
+
+    // Image fallback for missing images
+    document.querySelectorAll('img').forEach(img => {
+        img.addEventListener('error', function(e) {
+            if(!this.src.includes('placehold')) {
+                this.src = 'https://placehold.co/800x500/e9dfc7/2d6a4f?text=Bizerte+Scene';
+            }
+        });
+    });
+</script>
+</body>
+</html>
